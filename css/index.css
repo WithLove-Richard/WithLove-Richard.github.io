@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div#taskbar {
+    bottom: 0;
+    height: fit-content;
+    min-height: 50px;
+    width: 100%;
+    position: absolute;
+    backdrop-filter: blur(5px);
+}
