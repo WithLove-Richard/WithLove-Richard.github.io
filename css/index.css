@@ -13,11 +13,11 @@ div#taskbar {
     backdrop-filter: blur(5px);
 }
 
-div#taskbar[theme="dark"] {
+div#taskbar[theme="dark"]>div#taskbar {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-div#taskbar[theme="light"] {
+div#taskbar[theme="light"]>div#taskbar {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -26,10 +26,10 @@ div#desktop{
     height: 100%;
 }
 
-div#taskbar[theme="dark"]>div#desktop {
+div#desktop[theme="dark"] {
     background: url(/images/desktop/backgrounds/background-dark.png);
 }
 
-div#taskbar[theme="light"]>div#desktop {
+div#desktop[theme="light"] {
     background: url(/images/desktop/backgrounds/background-light.png);
 }
