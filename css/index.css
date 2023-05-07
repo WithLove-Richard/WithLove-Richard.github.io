@@ -26,10 +26,10 @@ div#desktop{
     height: 100%;
 }
 
-div#desktop[theme="dark"] {
+div#taskbar[theme="dark"]>div#desktop {
     background: url(/images/desktop/backgrounds/background-dark.png);
 }
 
-div#desktop[theme="light"] {
+div#taskbar[theme="light"]>div#desktop {
     background: url(/images/desktop/backgrounds/background-light.png);
 }
