@@ -8,9 +8,14 @@ div#taskbar {
     bottom: 0;
     height: fit-content;
     min-height: 50px;
-    width: 100%;
+    width: calc(100% - 40px);
     position: absolute;
     backdrop-filter: blur(5px);
+    padding: 10 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 div#desktop[theme="dark"]>div#taskbar {
@@ -21,7 +26,7 @@ div#desktop[theme="light"]>div#taskbar {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-div#desktop{
+div#desktop {
     width: 100%;
     height: 100%;
     background-position: center;
@@ -33,4 +38,12 @@ div#desktop[theme="dark"] {
 
 div#desktop[theme="light"] {
     background: url(/images/desktop/backgrounds/background-light.png);
+}
+
+div#timeanddate {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
 }

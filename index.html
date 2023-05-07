@@ -1,19 +1,22 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="/css/index.css">
-        <script src="/js/currenttimeanddate.js"></script>
-    </head>
-    <body>
-        <div id="desktop">
-            <div id="taskbar">
-                <div id="timeanddate">
-                    <span id="time"></span>
-                    <span id="date"></span>
-                </div>
-            </div>
+  <head>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/js/currenttimeanddate.js"></script>
+  </head>
+  <body>
+    <div id="desktop">
+      <div id="taskbar">
+        <div id="fromleft"></div>
+        <div id="fromright">
+          <div id="timeanddate">
+            <span id="time">18:50:02</span>
+            <span id="date">7. 5. 2023</span>
+          </div>
         </div>
-    </body>
-    <script>
-        window.addEventListener('load', updateTime());
-    </script>
+      </div>
+    </div>
+  </body>
+  <script>
+    window.addEventListener("load", updateTime());
+  </script>
 </html>
