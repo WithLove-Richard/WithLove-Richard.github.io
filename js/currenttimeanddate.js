@@ -5,5 +5,5 @@ function updateTime() {
 
     document.querySelector('#time').textContent = time;
     document.querySelector('#date').textContent = dateString;
-    updateTime()
+    setInterval(updateTime, 1000);
 }
