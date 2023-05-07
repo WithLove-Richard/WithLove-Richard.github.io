@@ -11,7 +11,14 @@ div#taskbar {
     width: 100%;
     position: absolute;
     backdrop-filter: blur(5px);
+}
+
+div#taskbar[theme="dark"] {
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+div#taskbar[theme="light"] {
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 div#desktop{
