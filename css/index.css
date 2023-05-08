@@ -51,10 +51,10 @@ div#timeanddate {
     border-radius: 10px;
 }
 
-div#desktop[theme="dark"]>div#taskbar>div#timeanddate {
+div#desktop[theme="dark"]>div#taskbar div#timeanddate {
     background-color: black;
 }
 
-div#desktop[theme="light"]>div#taskbar>div#timeanddate {
+div#desktop[theme="light"]>div#taskbar div#timeanddate {
     background-color: white;
 }
