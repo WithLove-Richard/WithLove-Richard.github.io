@@ -18,19 +18,14 @@ div#taskbar {
     justify-content: space-between;
 }
 
-div#desktop[theme="dark"] {
-    --MainThemeColor: "255, 255, 255";
-    --SecondaryThemeColor: "0, 0, 0";
+div#desktop[theme="dark"]>div#taskbar {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
 }
 
-div#desktop[theme="light"] {
-    --SecondaryThemeColor: "255, 255, 255";
-    --MainThemeColor: "0, 0, 0";
-}
-
-div#desktop>div#taskbar {
-    background-color: rgba(var(--SecondaryThemeColor), 0.25);
-    color: var(--MainThemeColor);
+div#desktop[theme="light"]>div#taskbar {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: black;
 }
 
 div#desktop {
@@ -39,8 +34,12 @@ div#desktop {
     background-position: center;
 }
 
-div#desktop {
-    background: var(--DefaultBackgroundImage);
+div#desktop[theme="dark"] {
+    background: url(/images/desktop/backgrounds/background-dark.png);
+}
+
+div#desktop[theme="light"] {
+    background: url(/images/desktop/backgrounds/background-light.png);
 }
 
 div#timeanddate {
@@ -48,7 +47,4 @@ div#timeanddate {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: var(--SecondaryThemeColor);
-    padding: 5px;
-    border-radius: 10px;
 }
