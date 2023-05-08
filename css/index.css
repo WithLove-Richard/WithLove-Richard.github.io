@@ -39,12 +39,8 @@ div#desktop {
     background-position: center;
 }
 
-div#desktop[theme="dark"] {
-    background: url(/images/desktop/backgrounds/background-dark.png);
-}
-
-div#desktop[theme="light"] {
-    background: url(/images/desktop/backgrounds/background-light.png);
+div#desktop {
+    background: var(--DefaultBackgroundImage);
 }
 
 div#timeanddate {
