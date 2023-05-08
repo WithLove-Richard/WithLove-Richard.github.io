@@ -47,4 +47,14 @@ div#timeanddate {
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+div#desktop[theme="dark"]>div#taskbar>div#timeanddate {
+    background-color: black;
+}
+
+div#desktop[theme="light"]>div#taskbar>div#timeanddate {
+    background-color: white;
 }
