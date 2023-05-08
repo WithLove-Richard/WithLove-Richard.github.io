@@ -30,7 +30,7 @@ div#desktop[theme="light"]>div#taskbar {
 div#desktop {
     width: 100%;
     height: 100%;
-    background-position: center;
+    background-position: center !important;
 }
 
 div#desktop[theme="dark"] {
