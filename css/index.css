@@ -6,8 +6,7 @@ body {
 
 div#taskbar {
     bottom: 0;
-    height: fit-content;
-    min-height: 50px;
+    height: 40px;
     width: calc(100% - 40px);
     position: absolute;
     backdrop-filter: blur(5px);
