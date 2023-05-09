@@ -28,7 +28,7 @@ function startLoading() {
     const taskbar = document.getElementById('taskbar');
     const timeAndDate = document.getElementById('timeanddate');
     
-    const checkDesktopDisplay = setInterval(() => {
+    setInterval(() => {
       if (desktop.style.display === 'block') {
         clearInterval(checkDesktopDisplay);
         setTimeout(() => {
