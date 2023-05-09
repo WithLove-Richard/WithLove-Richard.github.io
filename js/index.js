@@ -24,30 +24,20 @@ function setUpTheme() {
 
 
 function startLoading() {
-  const desktop = document.getElementById('desktop');
-  const taskbar = document.getElementById('taskbar');
-  const timeAndDate = document.getElementById('timeanddate');
+    const desktop = document.getElementById('desktop');
+    const taskbar = document.getElementById('taskbar');
+    const timeAndDate = document.getElementById('timeanddate');
+    const bgCookie = getCookie('bg');
   
-  const checkDesktopDisplay = setInterval(() => {
     if (desktop.style.display === 'block') {
-      clearInterval(checkDesktopDisplay);
-      setTimeout(() => {
-        const bgCookie = getCookie('bg');
+        setTimeout(() => {
         if (bgCookie) {
-          desktop.style.background = `url(${bgCookie})`;
+            desktop.style.background = `url(${bgCookie}) !important`;
         }
-        setUpTheme();
-      }, Math.floor(Math.random() * 4500) + 500);
+            setUpTheme();
+        }, Math.floor(Math.random() * 4500) + 500);
       
-      setTimeout(() => {
-        taskbar.style.display = 'flex';
-      }, Math.floor(Math.random() * 1500));
-      
-      setTimeout(() => {
-        timeAndDate.style.display = 'flex';
-      }, Math.floor(Math.random() * 2000));
     }
-  }, 500);
 }
 
   
