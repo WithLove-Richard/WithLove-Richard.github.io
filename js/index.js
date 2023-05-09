@@ -21,3 +21,37 @@ function setUpTheme() {
         desktop.setAttribute('theme', "light");
     }
 }
+
+
+function startLoading() {
+    const desktop = document.getElementById('desktop');
+    const taskbar = document.getElementById('taskbar');
+    const timeAndDate = document.getElementById('timeanddate');
+    
+    const checkDesktopDisplay = setInterval(() => {
+      if (desktop.style.display === 'block') {
+        clearInterval(checkDesktopDisplay);
+        setTimeout(() => {
+          const bgCookie = getCookie('bg');
+          if (bgCookie) {
+            desktop.style.background = `url(${bgCookie})`;
+          }
+          setUpTheme();
+        }, Math.floor(Math.random() * 4500) + 500);
+        
+        setTimeout(() => {
+          taskbar.style.display = 'flex';
+        }, Math.floor(Math.random() * 1500));
+        
+        setTimeout(() => {
+          timeAndDate.style.display = 'flex';
+        }, Math.floor(Math.random() * 2000));
+      }
+    }, 500);
+  }
+  
+  function getCookie(name) {
+    const cookieValue = document.cookie.match(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`);
+    return cookieValue ? cookieValue.pop() : '';
+  }
+  
