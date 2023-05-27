@@ -29,7 +29,7 @@ function setUpTheme() {
     const timeAndDate = document.getElementById('timeanddate');
     const bgCookie = getCookie('bg');
   
-    if (desktop.style.display === 'block') {
+    if (desktop.display === 'block') {
         setTimeout(() => {
         if (bgCookie) {
             desktop.style.background = `url(${bgCookie}) !important`;
