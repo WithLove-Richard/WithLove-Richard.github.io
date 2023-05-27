@@ -23,7 +23,7 @@ function setUpTheme() {
 }
 
 
-function startLoading() {
+
     const desktop = document.getElementById('desktop');
     const taskbar = document.getElementById('taskbar');
     const timeAndDate = document.getElementById('timeanddate');
@@ -38,7 +38,6 @@ function startLoading() {
         }, Math.floor(Math.random() * 4500) + 500);
       
     }
-}
 
   
   function getCookie(name) {
