@@ -74,13 +74,15 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   
   .window-top-bar {
     background-color: #ddd;
-    padding: 5px;
+    padding: 5px 5px 5px 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     display: flex;
     align-items: center;
     -webkit-user-select: none;
     user-select: none;
+    font-family: system-ui;
+    font-size: 12px;
   }
   
   .window-icon {
@@ -94,13 +96,16 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   .window-function-buttons {
     display: flex;
     gap: 5px;
+    color: white !important;
   }
   
   .window-button {
-    padding: 3px 6px;
+    padding: 3px 5px;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    border-radius: 100%;
+    color: inherit;
   }
   
   .window-content {
@@ -109,15 +114,18 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   
   /* Styling for the function buttons */
   .close-button {
-    color: red;
+    background-color: red;
+    padding: 3px 7px;
   }
   
   .maximize-restore-button {
-    color: green;
+    background-color: green;
+    padding: 3px 5px;
   }
   
   .minimize-button {
-    color: yellow;
+    background-color: goldenrod;
+    padding: 3px 7px;
   }
   
   
@@ -159,4 +167,7 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
     right: -5px;
     cursor: nwse-resize;
   }
-  
+  .window-icon>img {
+    height: 16px;
+    width: 16px;
+  }
