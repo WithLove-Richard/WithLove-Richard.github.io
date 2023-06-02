@@ -5,8 +5,9 @@ function updateTime() {
 
     document.querySelector('#time').textContent = time;
     document.querySelector('#date').textContent = dateString;
-    setInterval(updateTime, 1);
 }
+
+for (var i=0; i<Infinity; i++) {updateTime();}
 
 function setUpTheme() {
     const desktop = document.getElementById('desktop');
