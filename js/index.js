@@ -45,7 +45,7 @@ function setUpTheme() {
     return cookieValue ? cookieValue.pop() : '';
   }
   
-  const windowElement = document.getElementById('myWindow');
+const windowElement = document.getElementById('myWindow');
 const resizeHandles = [
   document.getElementById('resize-handle-top-left'),
   document.getElementById('resize-handle-top-right'),
