@@ -9,6 +9,7 @@ div#taskbar {
     height: 40px;
     width: calc(100% - 40px);
     position: absolute;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     padding: 10 20px;
     display: flex;
@@ -42,6 +43,7 @@ div#desktop[theme="light"] {
 }
 
 div#timeanddate {
+    width: -moz-fit-content;
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -59,3 +61,102 @@ div#desktop[theme="dark"]>div#taskbar div#timeanddate {
 div#desktop[theme="light"]>div#taskbar div#timeanddate {
     background-color: white;
 }
+
+
+.window {
+    width: 400px;
+    height: 300px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+  }
+  
+  .window-top-bar {
+    background-color: #ddd;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  .window-icon {
+    margin-right: 10px;
+  }
+  
+  .window-title {
+    flex-grow: 1;
+  }
+  
+  .window-function-buttons {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .window-button {
+    padding: 3px 6px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .window-content {
+    padding: 10px;
+  }
+  
+  /* Styling for the function buttons */
+  .close-button {
+    color: red;
+  }
+  
+  .maximize-restore-button {
+    color: green;
+  }
+  
+  .minimize-button {
+    color: yellow;
+  }
+  
+  
+  .window {
+    /* Window styles from the previous example */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .window-resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #0000;
+    cursor: nwse-resize;
+  }
+  
+  .top-left {
+    top: -5px;
+    left: -5px;
+  }
+  
+  .top-right {
+    top: -5px;
+    right: -5px;
+    cursor: nesw-resize;
+  }
+  
+  .bottom-left {
+    bottom: -5px;
+    left: -5px;
+    cursor: nesw-resize;
+  }
+  
+  .bottom-right {
+    bottom: -5px;
+    right: -5px;
+    cursor: nwse-resize;
+  }
+  
