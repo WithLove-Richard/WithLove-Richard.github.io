@@ -7,9 +7,8 @@ function updateTime() {
 
     timeTextObject.textContent = time;
     dateTextObject.textContent = dateString;
+    setTimeout(updateTime, 1)
 }
-
-for (var i=0; i<Infinity; i++) {updateTime();}
 
 function setUpTheme() {
     const desktop = document.getElementById('desktop');
