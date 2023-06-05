@@ -2,9 +2,11 @@ function updateTime() {
     const dateandtime = new Date();
     const time = dateandtime.toLocaleTimeString();
     const dateString = dateandtime.toLocaleDateString();
+    const timeTextObject = document.querySelector('#time');
+    const dateTextObject = document.querySelector('#date');
 
-    document.querySelector('#time').textContent = time;
-    document.querySelector('#date').textContent = dateString;
+    timeTextObject.textContent = time;
+    dateTextObject.textContent = dateString;
 }
 
 for (var i=0; i<Infinity; i++) {updateTime();}
