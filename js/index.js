@@ -46,68 +46,41 @@ function setUpTheme() {
     return cookieValue ? cookieValue.pop() : '';
   }
   
-const windowElement = document.getElementById('myWindow');
-const resizeHandles = [
-  document.getElementById('resize-handle-top-left'),
-  document.getElementById('resize-handle-top-right'),
-  document.getElementById('resize-handle-bottom-left'),
-  document.getElementById('resize-handle-bottom-right')
-];
-let isResizing = false;
-let startX;
-let startY;
-let startWidth;
-let startHeight;
+// Select all window elements
+const windows = document.getElementsByClassName('window');
 
-resizeHandles.forEach(handle => {
-  handle.addEventListener('mousedown', startResize);
-});
+// Loop through each window and attach the event listeners for dragging
+windows.forEach(windowElement => {
+  const windowTopBar = windowElement.querySelector('.window-top-bar');
+  windowTopBar.addEventListener('mousedown', startDrag);
 
-function startResize(e) {
-  e.preventDefault();
-  isResizing = true;
-  startX = e.clientX;
-  startY = e.clientY;
-  startWidth = parseInt(document.defaultView.getComputedStyle(windowElement).width, 10);
-  startHeight = parseInt(document.defaultView.getComputedStyle(windowElement).height, 10);
-  window.addEventListener('mousemove', resize);
-  window.addEventListener('mouseup', stopResize);
-}
+  function startDrag(event) {
+    event.preventDefault();
 
-function resize(e) {
-  if (!isResizing) return;
+    const initialX = event.clientX;
+    const initialY = event.clientY;
 
-  const deltaX = e.clientX - startX;
-  const deltaY = e.clientY - startY;
+    const windowRect = windowElement.getBoundingClientRect();
+    const offsetX = initialX - windowRect.left;
+    const offsetY = initialY - windowRect.top;
 
-  const corner = e.target.classList[1];
+    window.addEventListener('mousemove', dragWindow);
+    window.addEventListener('mouseup', stopDrag);
 
-  switch (corner) {
-    case 'top-left':
-      windowElement.style.width = `${startWidth - deltaX}px`;
-      windowElement.style.height = `${startHeight - deltaY}px`;
-      windowElement.style.left = `${startX + deltaX}px`;
-      windowElement.style.top = `${startY + deltaY}px`;
-      break;
-    case 'top-right':
-      windowElement.style.width = `${startWidth + deltaX}px`;
-      windowElement.style.height = `${startHeight - deltaY}px`;
-      windowElement.style.top = `${startY + deltaY}px`;
-      break;
-    case 'bottom-left':
-      windowElement.style.width = `${startWidth - deltaX}px`;
-      windowElement.style.height = `${startHeight + deltaY}px`;
-      windowElement.style.left = `${startX + deltaX}px`;
-      break;
-    case 'bottom-right':
-      windowElement.style.width = `${startWidth + deltaX}px`;
-      windowElement.style.height = `${startHeight + deltaY}px`;
-      break;
+    function dragWindow(event) {
+      const currentX = event.clientX;
+      const currentY = event.clientY;
+
+      const newLeft = currentX - offsetX;
+      const newTop = currentY - offsetY;
+
+      windowElement.style.left = `${newLeft}px`;
+      windowElement.style.top = `${newTop}px`;
+    }
+
+    function stopDrag() {
+      window.removeEventListener('mousemove', dragWindow);
+      window.removeEventListener('mouseup', stopDrag);
+    }
   }
-}
-
-function stopResize() {
-  isResizing = false;
-  window.removeEventListener('mousemove', resize);
-  window.removeEventListener('mouseup', stopResize);
-}
+});
