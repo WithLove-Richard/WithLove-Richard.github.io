@@ -2,8 +2,8 @@ function updateTime() {
     const dateandtime = new Date();
     const time = dateandtime.toLocaleTimeString();
     const dateString = dateandtime.toLocaleDateString();
-    const timeTextObject = document.querySelector('#time');
-    const dateTextObject = document.querySelector('#date');
+    const timeTextObject = document.querySelector('span#time');
+    const dateTextObject = document.querySelector('span#date');
 
     timeTextObject.textContent = time;
     dateTextObject.textContent = dateString;
