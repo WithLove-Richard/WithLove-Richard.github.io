@@ -36,7 +36,8 @@ div#desktop {
     width: 100%;
     height: 100%;
     background-position: center !important;
-}
+    background-size: cover;
+  }
 
 div#desktop[theme="dark"] {
     background: url(/images/desktop/backgrounds/background-dark.png);
