@@ -5,17 +5,17 @@
   </head>
   <body>
     <div id="desktop">
-      <div class="window" id="myWindow">
+      <div class="window" id="ilymessengerWindowHost">
         <div class="window-resize-handle top-left" id="resize-handle-top-left"></div>
       <div class="window-resize-handle top-right" id="resize-handle-top-right"></div>
       <div class="window-resize-handle bottom-left" id="resize-handle-bottom-left"></div>
       <div class="window-resize-handle bottom-right" id="resize-handle-bottom-right"></div>
       <div class="window-top-bar">
         <div class="window-icon">
-          <img src="window-icon.png" alt="Window Icon">
+          <img src="/images/apps/ilymessenger/icon.png" alt="Window Icon">
         </div>
         <div class="window-title">
-          Window Title
+          ilymessenger
         </div>
         <div class="window-function-buttons">
           <button class="window-button close-button">×</button>
@@ -45,13 +45,13 @@
 <script>
 
 // Make the DIV element draggable:
-dragElement(document.getElementById("myWindow"));
+dragElement(document.getElementById("ilymessengerWindowHost"));
   
   function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.querySelector(".window-top-bar")) {
+    if (elmnt.querySelector(".window-top-bar")) {
       // if present, the header is where you move the DIV from:
-      document.querySelector(".window-top-bar").onmousedown = dragMouseDown;
+      elmnt.querySelector(".window-top-bar").onmousedown = dragMouseDown;
     } else {
       // otherwise, move the DIV from anywhere inside the DIV:
       elmnt.onmousedown = dragMouseDown;
