@@ -2,6 +2,13 @@ dragElement(document.getElementById("ilymessengerWindowHost"));
   
   function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    
+    const isMinimized = elmnt.dataset.minimized === 'true';
+
+    if (isMinimized) {
+        return; // Prevent dragging if window is minimized
+    }
+      
     if (elmnt.querySelector(".window-top-bar")) {
       // if present, the header is where you move the DIV from:
       elmnt.querySelector(".window-top-bar").onmousedown = dragMouseDown;
