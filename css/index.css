@@ -135,11 +135,9 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   
   
   .window {
-    /* Window styles from the previous example */
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 33%;
+    top: 33%;
   }
   
   .window-resize-handle {
@@ -175,4 +173,11 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   .window-icon>img {
     height: 16px;
     width: 16px;
+  }
+
+  .window[data-maximized="true"] {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: calc(100% - 60px);
   }
