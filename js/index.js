@@ -47,4 +47,41 @@ function setUpTheme() {
     return cookieValue ? cookieValue.pop() : '';
   }
   
+// Select all window elements
+const windows = document.getElementsByClassName('window');
 
+// Loop through each window and attach the event listeners for dragging
+windows.forEach(windowElement => {
+  const windowTopBar = windowElement.querySelector('.window-top-bar');
+  windowTopBar.addEventListener('mousedown', startDrag);
+
+  function startDrag(event) {
+    event.preventDefault();
+
+    const initialX = event.clientX;
+    const initialY = event.clientY;
+
+    const windowRect = windowElement.getBoundingClientRect();
+    const offsetX = initialX - windowRect.left;
+    const offsetY = initialY - windowRect.top;
+
+    window.addEventListener('mousemove', dragWindow);
+    window.addEventListener('mouseup', stopDrag);
+
+    function dragWindow(event) {
+      const currentX = event.clientX;
+      const currentY = event.clientY;
+
+      const newLeft = currentX - offsetX;
+      const newTop = currentY - offsetY;
+
+      windowElement.style.left = `${newLeft}px`;
+      windowElement.style.top = `${newTop}px`;
+    }
+
+    function stopDrag() {
+      window.removeEventListener('mousemove', dragWindow);
+      window.removeEventListener('mouseup', stopDrag);
+    }
+  }
+});
