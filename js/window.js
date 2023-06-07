@@ -8,7 +8,7 @@ dragElement(document.getElementById("ilymessengerWindowHost"));
       // if present, the header is where you move the DIV from:
       elmnt.querySelector(".window-top-bar").onmousedown = dragMouseDown;
     } else {
-      if (isMaximized || isMinimized) { return; }
+      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { return; }
       // otherwise, move the DIV from anywhere inside the DIV:
       elmnt.onmousedown = dragMouseDown;
     }
