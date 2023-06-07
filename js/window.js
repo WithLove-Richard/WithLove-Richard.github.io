@@ -4,6 +4,7 @@ dragElement(document.getElementById("ilymessengerWindowHost"));
   function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
+    if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { closeDragElement(); }
 
     if (elmnt.querySelector(".window-top-bar")) {
       // if present, the header is where you move the DIV from:
@@ -27,8 +28,6 @@ dragElement(document.getElementById("ilymessengerWindowHost"));
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
-
-      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { closeDragElement(); }
 
       // calculate the new cursor position:
       pos1 = pos3 - e.clientX;
