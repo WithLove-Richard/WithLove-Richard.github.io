@@ -2,11 +2,9 @@
 dragElement(document.getElementById("ilymessengerWindowHost"));
   
   function dragElement(elmnt) {
-    const isMinimized = elmnt.dataset.minimized === 'true';
-    const isMaximized = elmnt.dataset.maximized === 'true';
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (elmnt.querySelector(".window-top-bar")) {
-      if (isMaximized || isMinimized) { return; }
+      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { return; }
       // if present, the header is where you move the DIV from:
       elmnt.querySelector(".window-top-bar").onmousedown = dragMouseDown;
     } else {
