@@ -28,7 +28,7 @@ dragElement(document.getElementById("ilymessengerWindowHost"));
       e = e || window.event;
       e.preventDefault();
 
-      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { return; }
+      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { closeDragElement(); }
 
       // calculate the new cursor position:
       pos1 = pos3 - e.clientX;
