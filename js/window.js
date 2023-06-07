@@ -3,12 +3,14 @@ dragElement(document.getElementById("ilymessengerWindowHost"));
   
   function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { return; }
+
+
     if (elmnt.querySelector(".window-top-bar")) {
-      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { return; }
       // if present, the header is where you move the DIV from:
       elmnt.querySelector(".window-top-bar").onmousedown = dragMouseDown;
     } else {
-      if (elmnt.dataset.minimized === 'true' || elmnt.dataset.maximized === 'true') { return; }
       // otherwise, move the DIV from anywhere inside the DIV:
       elmnt.onmousedown = dragMouseDown;
     }
