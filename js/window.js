@@ -381,9 +381,9 @@ function changeElementAppearence(elmnt) {
 
   function maxres(elmnt) {
     if (elmnt.dataset.maximized === "true") {
-      elmnt.dataset.maximized === "false"
+      elmnt.dataset.maximized = "false"
     } else {
-      elmnt.dataset.maximized === "true"
+      elmnt.dataset.maximized = "true"
     }
   }
 }
