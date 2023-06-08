@@ -87,12 +87,14 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     color: #000;
+    transition: all 0.5s
   }
 
   div#desktop[theme="dark"] .window {
     background-color: #0d0d0d;
     border: 1px solid #333333;
     color: #fff;
+    transition: all 0.5s
   }
   
   .window-top-bar {
@@ -110,11 +112,13 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   div#desktop[theme="light"] .window-top-bar {
     background-color: #ddd;
     color: #000;
+    transition: all 0.5s
   }
 
   div#desktop[theme="dark"] .window-top-bar {
     background-color: #222;
-    color: #fff
+    color: #fff;
+    transition: all 0.5s
   }
   
   .window-icon {
