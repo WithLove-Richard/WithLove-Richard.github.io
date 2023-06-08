@@ -377,7 +377,7 @@ function changeElementAppearence(elmnt) {
 
   maxresbutton.addEventListener("click", maxres(elmnt))
 
-
+}
 
   function maxres(elmnt) {
     if (elmnt.dataset.maximized === "true") {
@@ -386,4 +386,3 @@ function changeElementAppearence(elmnt) {
       elmnt.dataset.maximized = "true"
     }
   }
-}
