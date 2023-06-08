@@ -104,7 +104,7 @@ function resizeTopLeft(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth >= minWidth && newHeight >= minHeight) {
+  if (newWidth <= minWidth && newHeight <= minHeight) {
     elmnt.style.width = `${newWidth}px`;
     elmnt.style.height = `${newHeight}px`;
     elmnt.style.left = `${startLeft + deltaX}px`;
@@ -145,7 +145,7 @@ function resizeTopRight(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft;
 
-  if (newWidth >= minWidth && newHeight >= minHeight) {
+  if (newWidth <= minWidth && newHeight <= minHeight) {
     elmnt.style.width = `${newWidth}px`;
     elmnt.style.height = `${newHeight}px`;
     elmnt.style.top = `${startTop + deltaY}px`;
@@ -185,7 +185,7 @@ function resizeBottomLeft(e) {
   const newTop = startTop;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth >= minWidth && newHeight >= minHeight) {
+  if (newWidth <= minWidth && newHeight <= minHeight) {
     elmnt.style.width = `${newWidth}px`;
     elmnt.style.height = `${newHeight}px`;
     elmnt.style.left = `${startLeft + deltaX}px`;
@@ -256,7 +256,7 @@ function resizeBottomRight(e) {
     const newHeight = startHeight + deltaY;
     const newTop = startTop - deltaY;
 
-    if (newHeight >= minHeight) {
+    if (newHeight <= minHeight) {
       elmnt.style.height = `${newHeight}px`;
       elmnt.style.top = `${startTop + deltaY}px`;
     } else {
@@ -338,7 +338,7 @@ function resizeLeft(e) {
   const newWidth = startWidth + deltaX;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth >= minWidth) {
+  if (newWidth <= minWidth) {
     elmnt.style.width = `${newWidth}px`;
     elmnt.style.left = `${startLeft + deltaX}px`;
   } else {
