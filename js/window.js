@@ -375,7 +375,7 @@ function resizeLeft(e) {
 function changeElementAppearence(elmnt) {
   const maxresbutton = elmnt.querySelector(".maximize-restore-button")
 
-  maxresbutton.addEventListener("mousedown", maxres(elmnt))
+  maxresbutton.addEventListener("click", maxres(elmnt))
 
 
 
