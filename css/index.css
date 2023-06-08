@@ -140,36 +140,73 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
     top: 33%;
   }
   
-  .window-resize-handle {
+  .window-resize-handle.corner {
     position: absolute;
     width: 10px;
     height: 10px;
     background-color: #0000;
-    cursor: nwse-resize;
+  }
+
+  .window-resize-handle.vertical {
+    position: absolute;
+    width: 10px;
+    height: calc(100% - 20px);
+    background-color: #0000;
+    cursor: w-resize;
+  }
+
+  .window-resize-handle.horizontal {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 10px;
+    background-color: #0000;
+    cursor: s-resize;
   }
   
-  .top-left {
+  .window-resize-handle.top-left {
     top: -5px;
     left: -5px;
   }
   
-  .top-right {
+  .window-resize-handle.top-right {
     top: -5px;
     right: -5px;
     cursor: nesw-resize;
   }
   
-  .bottom-left {
+  .window-resize-handle.bottom-left {
     bottom: -5px;
     left: -5px;
     cursor: nesw-resize;
   }
   
-  .bottom-right {
+  .window-resize-handle.bottom-right {
     bottom: -5px;
     right: -5px;
     cursor: nwse-resize;
   }
+
+  .window-resize-handle.top {
+    top: -5px;
+    left: 5px;
+  }
+  
+  .window-resize-handle.right {
+    top: 5px;
+    right: -5px;
+  }
+  
+  .window-resize-handle.left {
+    bottom: 5px;
+    left: -5px;
+  }
+  
+  .window-resize-handle.bottom {
+    bottom: -5px;
+    right: 5px;
+  }
+
+
   .window-icon>img {
     height: 16px;
     width: 16px;
