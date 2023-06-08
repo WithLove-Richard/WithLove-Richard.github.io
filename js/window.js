@@ -3,7 +3,7 @@ setWindow(document.getElementById("ilymessengerWindowHost"));
 function setWindow(window, minWidth = 400, minHeight = 300) {
   dragElement(window);
   resizeElement(window, minWidth, minHeight);
-  changeElementAppearence(window)
+  changeElementAppearence(window);
 }
   
   function dragElement(elmnt) {
@@ -375,7 +375,7 @@ function resizeLeft(e) {
 function changeElementAppearence(elmnt) {
   const maxresbutton = elmnt.querySelector(".maximize-restore-button")
 
-  maxresbutton.addEventListener("click", maxres(elmnt))
+  maxresbutton.addEventListener("click", () => {maxres(elmnt);});
 
 }
 
