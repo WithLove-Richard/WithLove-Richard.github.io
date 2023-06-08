@@ -105,10 +105,10 @@ function startResizeTopLeft(e) {
     const newLeft = startLeft - deltaX;
 
     if (newWidth <= minWidth && newHeight <= minHeight) {
-      elmnt.style.width = startWidth + 'px';
-      elmnt.style.height = startHeight + 'px';
-      elmnt.style.top = startTop + 'px';
-      elmnt.style.left = startLeft + 'px';
+      elmnt.style.width = minWidth + 'px';
+      elmnt.style.height = minHeight + 'px';
+      elmnt.style.top = newTop + 'px';
+      elmnt.style.left = newLeft + 'px';
     } else if (newHeight <= minHeight) {
       elmnt.style.left = newLeft + 'px';
       elmnt.style.width = newWidth + 'px';
@@ -151,10 +151,10 @@ function resizeTopRight(e) {
   const newLeft = startLeft;
 
   if (newWidth <= minWidth && newHeight <= minHeight) {
-    elmnt.style.width = startWidth + 'px';
-    elmnt.style.height = startHeight + 'px';
-    elmnt.style.top = startTop + 'px';
-    elmnt.style.left = startLeft + 'px';
+    elmnt.style.width = minWidth + 'px';
+    elmnt.style.height = minHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+    elmnt.style.left = newLeft + 'px';
   } else if (newHeight <= minHeight) {
     elmnt.style.left = newLeft + 'px';
     elmnt.style.width = newWidth + 'px';
@@ -197,10 +197,10 @@ function resizeBottomLeft(e) {
   const newLeft = startLeft - deltaX;
 
   if (newWidth <= minWidth && newHeight <= minHeight) {
-    elmnt.style.width = startWidth + 'px';
-    elmnt.style.height = startHeight + 'px';
-    elmnt.style.top = startTop + 'px';
-    elmnt.style.left = startLeft + 'px';
+    elmnt.style.width = minWidth + 'px';
+    elmnt.style.height = minHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+    elmnt.style.left = newLeft + 'px';
   } else if (newHeight <= minHeight) {
     elmnt.style.left = newLeft + 'px';
     elmnt.style.width = newWidth + 'px';
@@ -274,8 +274,8 @@ function resizeBottomRight(e) {
     const newTop = startTop - deltaY;
 
     if (newHeight <= minHeight) {
-      elmnt.style.height = startHeight + 'px';
-      elmnt.style.top = startTop + 'px';;
+      elmnt.style.height = minHeight + 'px';
+      elmnt.style.top = newTop + 'px';;
     } else {
       // Update the window element with the new size and position
       elmnt.style.height = newHeight + 'px';
@@ -356,8 +356,8 @@ function resizeLeft(e) {
   const newLeft = startLeft - deltaX;
 
   if (newWidth <= minWidth) {
-    elmnt.style.width = startWidth + 'px';
-    elmnt.style.left = startLeft + 'px';
+    elmnt.style.width = minWidth + 'px';
+    elmnt.style.left = newLeft + 'px';
   } else {
     // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
