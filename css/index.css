@@ -71,6 +71,8 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
 .window {
     width: 400px;
     height: 300px;
+    min-width: 400px !important;
+    min-height: 300px !important;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 5px;

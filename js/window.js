@@ -1,8 +1,8 @@
 setWindow(document.getElementById("ilymessengerWindowHost"));
 
-function setWindow(window) {
+function setWindow(window, minWidth = 400, minHeight = 300) {
   dragElement(window);
-  resizeElement(window);
+  resizeElement(window, minWidth, minHeight);
 }
   
   function dragElement(elmnt) {
@@ -50,7 +50,7 @@ function setWindow(window) {
     }
 }
   
-function resizeElement(elmnt) {
+function resizeElement(elmnt, minWidth, minHeight) {
   const resizeHandleTopLeft = elmnt.querySelector('.resize-handle-top-left');
   resizeHandleTopLeft.addEventListener('mousedown', startResizeTopLeft);
   const resizeHandleTopRight = elmnt.querySelector('.resize-handle-top-right');
@@ -104,11 +104,18 @@ function resizeTopLeft(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft - deltaX;
 
-  // Update the window element with the new size and position
-  elmnt.style.width = newWidth + 'px';
-  elmnt.style.height = newHeight + 'px';
-  elmnt.style.top = newTop + 'px';
-  elmnt.style.left = newLeft + 'px';
+  if (newWidth >= minWidth && newHeight >= minHeight) {
+    windowElement.style.width = `${newWidth}px`;
+    windowElement.style.height = `${newHeight}px`;
+    windowElement.style.left = `${startLeft + deltaX}px`;
+    windowElement.style.top = `${startTop + deltaY}px`;
+  } else {
+    // Update the window element with the new size and position
+    elmnt.style.width = newWidth + 'px';
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+    elmnt.style.left = newLeft + 'px'
+  }
 }
 
 function startResizeTopRight(e) {
@@ -138,11 +145,17 @@ function resizeTopRight(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft;
 
-  // Update the window element with the new size and position
-  elmnt.style.width = newWidth + 'px';
-  elmnt.style.height = newHeight + 'px';
-  elmnt.style.top = newTop + 'px';
-  elmnt.style.left = newLeft + 'px';
+  if (newWidth >= minWidth && newHeight >= minHeight) {
+    windowElement.style.width = `${newWidth}px`;
+    windowElement.style.height = `${newHeight}px`;
+    windowElement.style.top = `${startTop + deltaY}px`;
+  } else {
+    // Update the window element with the new size and position
+    elmnt.style.width = newWidth + 'px';
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+    elmnt.style.left = newLeft + 'px'
+  }
 }
 
 function startResizeBottomLeft(e) {
@@ -172,11 +185,17 @@ function resizeBottomLeft(e) {
   const newTop = startTop;
   const newLeft = startLeft - deltaX;
 
-  // Update the window element with the new size and position
-  elmnt.style.width = newWidth + 'px';
-  elmnt.style.height = newHeight + 'px';
-  elmnt.style.top = newTop + 'px';
-  elmnt.style.left = newLeft + 'px';
+  if (newWidth >= minWidth && newHeight >= minHeight) {
+    windowElement.style.width = `${newWidth}px`;
+    windowElement.style.height = `${newHeight}px`;
+    windowElement.style.left = `${startLeft + deltaX}px`;
+  } else {
+    // Update the window element with the new size and position
+    elmnt.style.width = newWidth + 'px';
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+    elmnt.style.left = newLeft + 'px';
+  }
   }
   
   
@@ -229,18 +248,23 @@ function resizeBottomRight(e) {
   }
 
 // Function to handle resizing the window from the top side
-function resizeTop(e) {
-  e.preventDefault();
+  function resizeTop(e) {
+    e.preventDefault();
 
-  const deltaY = startMouseY - e.clientY;
+    const deltaY = startMouseY - e.clientY;
 
-  const newHeight = startHeight + deltaY;
-  const newTop = startTop - deltaY;
+    const newHeight = startHeight + deltaY;
+    const newTop = startTop - deltaY;
 
-  // Update the window element with the new size and position
-  elmnt.style.height = newHeight + 'px';
-  elmnt.style.top = newTop + 'px';
-}
+    if (newHeight >= minHeight) {
+      windowElement.style.height = `${newHeight}px`;
+      windowElement.style.top = `${startTop + deltaY}px`;
+    } else {
+      // Update the window element with the new size and position
+      elmnt.style.height = newHeight + 'px';
+      elmnt.style.top = newTop + 'px';
+    }
+  }
 
 function startResizeRight(e) {
   e.preventDefault();
@@ -314,9 +338,14 @@ function resizeLeft(e) {
   const newWidth = startWidth + deltaX;
   const newLeft = startLeft - deltaX;
 
-  // Update the window element with the new size and position
-  elmnt.style.width = newWidth + 'px';
-  elmnt.style.left = newLeft + 'px';
+  if (newWidth >= minWidth) {
+    windowElement.style.width = `${newWidth}px`;
+    windowElement.style.left = `${startLeft + deltaX}px`;
+  } else {
+    // Update the window element with the new size and position
+    elmnt.style.width = newWidth + 'px';
+    elmnt.style.left = newLeft + 'px'
+  }
   }
   
   function stopResize() {
