@@ -83,12 +83,12 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
     position: absolute;
   }
 
-  .window[theme="light"] {
+  div#desktop[theme="light"] .window {
     background-color: #f2f2f2;
     border: 1px solid #ccc;
   }
 
-  .window[theme="dark"] {
+  div#desktop[theme="dark"] .window {
     background-color: #0d0d0d;
     border: 1px solid #333333;
   }
@@ -105,11 +105,11 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
     font-size: 12px;
   }
 
-  .window-top-bar[theme="light"] {
+  div#desktop[theme="light"] .window-top-bar {
     background-color: #ddd;
   }
 
-  .window-top-bar[theme="light"] {
+  div#desktop[theme="dark"] .window-top-bar {
     background-color: #222;
   }
   
