@@ -1,6 +1,9 @@
-// Make the DIV element draggable:
-dragElement(document.getElementById("ilymessengerWindowHost"));
-resizeElement(document.getElementById("ilymessengerWindowHost"));
+setWindow(document.getElementById("ilymessengerWindowHost"));
+
+function setWindow(window) {
+  dragElement(window);
+  resizeElement(window);
+}
   
   function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
