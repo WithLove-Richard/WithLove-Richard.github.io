@@ -92,34 +92,37 @@ function startResizeTopLeft(e) {
 }
   
 // Function to handle resizing the window from the top left corner
-function resizeTopLeft(e) {
-  e.preventDefault();
+  function resizeTopLeft(e) {
+    e.preventDefault();
 
-  const deltaX = startMouseX - e.clientX;
-  const deltaY = startMouseY - e.clientY;
+    const deltaX = startMouseX - e.clientX;
+    const deltaY = startMouseY - e.clientY;
 
-  const newWidth = startWidth + deltaX;
-  const newHeight = startHeight + deltaY;
+    const newWidth = startWidth + deltaX;
+    const newHeight = startHeight + deltaY;
 
-  const newTop = startTop - deltaY;
-  const newLeft = startLeft - deltaX;
+    const newTop = startTop - deltaY;
+    const newLeft = startLeft - deltaX;
 
-  if (newWidth <= minWidth) {
-    elmnt.style.height = newHeight + 'px';
-    elmnt.style.top = newTop + 'px';
-  } else if (newHeight <= minHeight) {
-    elmnt.style.left = newLeft + 'px';
-    elmnt.style.width = newWidth + 'px';
-  } else if (newWidth <= minWidth && newHeight <= minHeight) {
-    return;
-  } else {
-    // Update the window element with the new size and position
-    elmnt.style.width = newWidth + 'px';
-    elmnt.style.height = newHeight + 'px';
-    elmnt.style.top = newTop + 'px';
-    elmnt.style.left = newLeft + 'px';
+    if (newWidth <= minWidth) {
+      elmnt.style.height = newHeight + 'px';
+      elmnt.style.top = newTop + 'px';
+    } else if (newHeight <= minHeight) {
+      elmnt.style.left = newLeft + 'px';
+      elmnt.style.width = newWidth + 'px';
+    } else if (newWidth <= minWidth && newHeight <= minHeight) {
+      elmnt.style.width = startWidth + 'px';
+      elmnt.style.height = startHeight + 'px';
+      elmnt.style.top = startTop + 'px';
+      elmnt.style.left = startLeft + 'px';
+    } else {
+      // Update the window element with the new size and position
+      elmnt.style.width = newWidth + 'px';
+      elmnt.style.height = newHeight + 'px';
+      elmnt.style.top = newTop + 'px';
+      elmnt.style.left = newLeft + 'px';
+    }
   }
-}
 
 function startResizeTopRight(e) {
   e.preventDefault();
@@ -155,7 +158,10 @@ function resizeTopRight(e) {
     elmnt.style.left = newLeft + 'px';
     elmnt.style.width = newWidth + 'px';
   } else if (newWidth <= minWidth && newHeight <= minHeight) {
-    return;
+    elmnt.style.width = startWidth + 'px';
+    elmnt.style.height = startHeight + 'px';
+    elmnt.style.top = startTop + 'px';
+    elmnt.style.left = startLeft + 'px';
   } else {
     // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
@@ -199,7 +205,10 @@ function resizeBottomLeft(e) {
     elmnt.style.left = newLeft + 'px';
     elmnt.style.width = newWidth + 'px';
   } else if (newWidth <= minWidth && newHeight <= minHeight) {
-    return;
+    elmnt.style.width = startWidth + 'px';
+    elmnt.style.height = startHeight + 'px';
+    elmnt.style.top = startTop + 'px';
+    elmnt.style.left = startLeft + 'px';
   } else {
     // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
@@ -268,7 +277,8 @@ function resizeBottomRight(e) {
     const newTop = startTop - deltaY;
 
     if (newHeight <= minHeight) {
-      return;
+      elmnt.style.height = startHeight + 'px';
+      elmnt.style.top = startTop + 'px';;
     } else {
       // Update the window element with the new size and position
       elmnt.style.height = newHeight + 'px';
@@ -349,7 +359,8 @@ function resizeLeft(e) {
   const newLeft = startLeft - deltaX;
 
   if (newWidth <= minWidth) {
-    return;
+    elmnt.style.width = startWidth + 'px';
+    elmnt.style.left = startLeft + 'px';
   } else {
     // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
