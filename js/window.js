@@ -104,14 +104,20 @@ function resizeTopLeft(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth <= minWidth || newHeight <= minHeight) {
+  if (newWidth <= minWidth) {
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+  } else if (newHeight <= minHeight) {
+    elmnt.style.left = newLeft + 'px';
+    elmnt.style.width = newWidth + 'px';
+  } else if (newWidth <= minWidth && newHeight <= minHeight) {
     return;
   } else {
     // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
     elmnt.style.height = newHeight + 'px';
     elmnt.style.top = newTop + 'px';
-    elmnt.style.left = newLeft + 'px'
+    elmnt.style.left = newLeft + 'px';
   }
 }
 
@@ -142,14 +148,20 @@ function resizeTopRight(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft;
 
-  if (newWidth <= minWidth || newHeight <= minHeight) {
+  if (newWidth <= minWidth) {
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+  } else if (newHeight <= minHeight) {
+    elmnt.style.left = newLeft + 'px';
+    elmnt.style.width = newWidth + 'px';
+  } else if (newWidth <= minWidth && newHeight <= minHeight) {
     return;
   } else {
     // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
     elmnt.style.height = newHeight + 'px';
     elmnt.style.top = newTop + 'px';
-    elmnt.style.left = newLeft + 'px'
+    elmnt.style.left = newLeft + 'px';
   }
 }
 
@@ -180,7 +192,13 @@ function resizeBottomLeft(e) {
   const newTop = startTop;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth <= minWidth || newHeight <= minHeight) {
+  if (newWidth <= minWidth) {
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
+  } else if (newHeight <= minHeight) {
+    elmnt.style.left = newLeft + 'px';
+    elmnt.style.width = newWidth + 'px';
+  } else if (newWidth <= minWidth && newHeight <= minHeight) {
     return;
   } else {
     // Update the window element with the new size and position
