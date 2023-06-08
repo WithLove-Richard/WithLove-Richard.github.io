@@ -150,14 +150,14 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   .window-resize-handle.vertical {
     position: absolute;
     width: 10px;
-    height: calc(100% - 20px);
+    height: calc(100% - 10px);
     background-color: #0000;
     cursor: w-resize;
   }
 
   .window-resize-handle.horizontal {
     position: absolute;
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     height: 10px;
     background-color: #0000;
     cursor: s-resize;
@@ -166,6 +166,7 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   .window-resize-handle.top-left {
     top: -5px;
     left: -5px;
+    cursor: nwse-resize;
   }
   
   .window-resize-handle.top-right {
