@@ -35,7 +35,7 @@ div#desktop[theme="light"]>div#taskbar {
 }
 
 div#settingsbar {
-    top: -20px;
+    top: -30px;
     height: 20px;
     width: calc(100% - 20px);
     position: absolute;
