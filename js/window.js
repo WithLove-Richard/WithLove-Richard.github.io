@@ -104,19 +104,18 @@ function startResizeTopLeft(e) {
     const newTop = startTop - deltaY;
     const newLeft = startLeft - deltaX;
 
-    if (newWidth <= minWidth) {
-      elmnt.style.height = newHeight + 'px';
-      elmnt.style.top = newTop + 'px';
-    } else if (newHeight <= minHeight) {
-      elmnt.style.left = newLeft + 'px';
-      elmnt.style.width = newWidth + 'px';
-    } else if (newWidth <= minWidth && newHeight <= minHeight) {
+    if (newWidth <= minWidth && newHeight <= minHeight) {
       elmnt.style.width = startWidth + 'px';
       elmnt.style.height = startHeight + 'px';
       elmnt.style.top = startTop + 'px';
       elmnt.style.left = startLeft + 'px';
+    } else if (newHeight <= minHeight) {
+      elmnt.style.left = newLeft + 'px';
+      elmnt.style.width = newWidth + 'px';
+    } else if (newWidth <= minWidth) {
+      elmnt.style.height = newHeight + 'px';
+      elmnt.style.top = newTop + 'px';
     } else {
-      // Update the window element with the new size and position
       elmnt.style.width = newWidth + 'px';
       elmnt.style.height = newHeight + 'px';
       elmnt.style.top = newTop + 'px';
@@ -151,19 +150,18 @@ function resizeTopRight(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft;
 
-  if (newWidth <= minWidth) {
-    elmnt.style.height = newHeight + 'px';
-    elmnt.style.top = newTop + 'px';
-  } else if (newHeight <= minHeight) {
-    elmnt.style.left = newLeft + 'px';
-    elmnt.style.width = newWidth + 'px';
-  } else if (newWidth <= minWidth && newHeight <= minHeight) {
+  if (newWidth <= minWidth && newHeight <= minHeight) {
     elmnt.style.width = startWidth + 'px';
     elmnt.style.height = startHeight + 'px';
     elmnt.style.top = startTop + 'px';
     elmnt.style.left = startLeft + 'px';
+  } else if (newHeight <= minHeight) {
+    elmnt.style.left = newLeft + 'px';
+    elmnt.style.width = newWidth + 'px';
+  } else if (newWidth <= minWidth) {
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
   } else {
-    // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
     elmnt.style.height = newHeight + 'px';
     elmnt.style.top = newTop + 'px';
@@ -198,19 +196,18 @@ function resizeBottomLeft(e) {
   const newTop = startTop;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth <= minWidth) {
-    elmnt.style.height = newHeight + 'px';
-    elmnt.style.top = newTop + 'px';
-  } else if (newHeight <= minHeight) {
-    elmnt.style.left = newLeft + 'px';
-    elmnt.style.width = newWidth + 'px';
-  } else if (newWidth <= minWidth && newHeight <= minHeight) {
+  if (newWidth <= minWidth && newHeight <= minHeight) {
     elmnt.style.width = startWidth + 'px';
     elmnt.style.height = startHeight + 'px';
     elmnt.style.top = startTop + 'px';
     elmnt.style.left = startLeft + 'px';
+  } else if (newHeight <= minHeight) {
+    elmnt.style.left = newLeft + 'px';
+    elmnt.style.width = newWidth + 'px';
+  } else if (newWidth <= minWidth) {
+    elmnt.style.height = newHeight + 'px';
+    elmnt.style.top = newTop + 'px';
   } else {
-    // Update the window element with the new size and position
     elmnt.style.width = newWidth + 'px';
     elmnt.style.height = newHeight + 'px';
     elmnt.style.top = newTop + 'px';
