@@ -104,7 +104,7 @@ function resizeTopLeft(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth <= minWidth && newHeight <= minHeight) {
+  if (newWidth <= minWidth || newHeight <= minHeight) {
     return;
   } else {
     // Update the window element with the new size and position
@@ -142,7 +142,7 @@ function resizeTopRight(e) {
   const newTop = startTop - deltaY;
   const newLeft = startLeft;
 
-  if (newWidth <= minWidth && newHeight <= minHeight) {
+  if (newWidth <= minWidth || newHeight <= minHeight) {
     return;
   } else {
     // Update the window element with the new size and position
@@ -180,7 +180,7 @@ function resizeBottomLeft(e) {
   const newTop = startTop;
   const newLeft = startLeft - deltaX;
 
-  if (newWidth <= minWidth && newHeight <= minHeight) {
+  if (newWidth <= minWidth || newHeight <= minHeight) {
     return;
   } else {
     // Update the window element with the new size and position
