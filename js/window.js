@@ -3,6 +3,7 @@ setWindow(document.getElementById("ilymessengerWindowHost"));
 function setWindow(window, minWidth = 400, minHeight = 300) {
   dragElement(window);
   resizeElement(window, minWidth, minHeight);
+  changeElementAppearence(window)
 }
   
   function dragElement(elmnt) {
@@ -369,4 +370,20 @@ function resizeLeft(e) {
     window.removeEventListener('mouseup', stopResize);
   }
 
+}
+
+function changeElementAppearence(elmnt) {
+  const maxresbutton = elmnt.querySelector(".maximize-restore-button")
+
+  maxresbutton.onmousedown = maxres(elmnt)
+
+
+
+  function maxres(elmnt) {
+    if (elmnt.dataset.maximized === "true") {
+      elmnt.dataset.maximized === "false"
+    } else {
+      elmnt.dataset.maximized === "true"
+    }
+  }
 }
