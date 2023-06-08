@@ -374,8 +374,10 @@ function resizeLeft(e) {
 
 function changeElementAppearence(elmnt) {
   const maxresbutton = elmnt.querySelector(".maximize-restore-button")
+  const minbutton = elmnt.querySelector(".minimize-button")
 
   maxresbutton.addEventListener("click", () => {maxres(elmnt);});
+  minbutton.addEventListener("click", () => {min(elmnt);});
 
 }
 
@@ -384,5 +386,13 @@ function changeElementAppearence(elmnt) {
       elmnt.dataset.maximized = "false"
     } else {
       elmnt.dataset.maximized = "true"
+    }
+  }
+
+  function min(elmnt) {
+    if (elmnt.dataset.minimized === "true") {
+      elmnt.dataset.minimized = "false"
+    } else {
+      elmnt.dataset.minimized = "true"
     }
   }
