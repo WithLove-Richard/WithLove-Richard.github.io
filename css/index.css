@@ -35,7 +35,7 @@ div#desktop[theme="light"]>div#taskbar {
 }
 
 div#settingsbar {
-    top: 0;
+    top: -20px;
     height: 20px;
     width: calc(100% - 20px);
     position: absolute;
@@ -47,15 +47,17 @@ div#settingsbar {
 }
 
 div#desktop[theme="dark"]>div#settingsbar {
+    top: 0px;
     background-color: #000;
     color: white;
-    transition: background-color 0.5s, color 0.5s
+    transition: background-color 0.5s, color 0.5s, top 2s ease-in-out 1s;
 }
 
 div#desktop[theme="light"]>div#settingsbar {
+    top: 0px;
     background-color: #fff;
     color: black;
-    transition: background-color 0.5s, color 0.5s
+    transition: background-color 0.5s, color 0.5s, top 2s ease-in-out 1s;
 }
 
 div#desktop {
