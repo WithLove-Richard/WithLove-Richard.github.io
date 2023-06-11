@@ -53,12 +53,12 @@ div#desktop {
 
 div#desktop[theme="dark"] {
     background: url(/images/desktop/backgrounds/background-dark.png);
-    transition: background-url 0.5s,
+    transition: background 0.5s;
 }
 
 div#desktop[theme="light"] {
     background: url(/images/desktop/backgrounds/background-light.png);
-    transition: background-url 0.5s,
+    transition: background 0.5s;
 }
 
 div#timeanddate {
