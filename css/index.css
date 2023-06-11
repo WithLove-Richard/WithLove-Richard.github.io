@@ -22,6 +22,16 @@ div#taskbar {
     justify-content: space-between;
 }
 
+div#taskbar>div#fromright {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+div#taskbar>div#fromleft {
+  display: flex;
+  flex-direction: row;
+}
+
 div#desktop[theme="dark"]>div#taskbar {
     background-color: rgba(0, 0, 0, 0.25);
     color: white;

@@ -48,3 +48,24 @@ function setUpTheme() {
   }
   
 
+  const themeSwitchButton = document.getElementById('themeSwitchButton');
+
+// Add event listener to the theme switch button
+themeSwitchButton.addEventListener('click', () => {
+  // Get the desktop element
+  const desktop = document.getElementById('desktop');
+
+  // Toggle the theme attribute of the desktop element
+  if (desktop.getAttribute('theme') === 'light') {
+    desktop.setAttribute('theme', 'dark');
+  } else {
+    desktop.setAttribute('theme', 'light');
+  }
+
+  // Update the theme cookie
+  const theme = desktop.getAttribute('theme');
+  document.cookie = `theme=${theme}; path=/; expires=Thu, 01 Jan 2099 00:00:00 UTC`;
+
+  // You can also update any other styles or classes based on the theme here
+});
+
