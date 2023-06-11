@@ -269,3 +269,7 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
   .window[data-maximized="true"] .window-resize-handle, .window[data-minimized="true"] .window-resize-handle {
     cursor: default;
   }
+
+  .window[data-minimized="true"] .close-button, .window[data-minimized="true"] .minimize-button, .window[data-minimized="true"] .maximize-restore-button {
+    cursor: default;
+  }
