@@ -1,3 +1,7 @@
-.window#ilymessengerWindowHost>.window-content {
+#desktop[theme="light"]  .window#ilymessengerWindowHost>.window-content {
     background-color: #FF3150;
+}
+
+#desktop[theme="dark"]  .window#ilymessengerWindowHost>.window-content {
+    background-color: #b30004;
 }
