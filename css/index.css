@@ -265,3 +265,7 @@ div#desktop[theme="light"]>div#taskbar div#timeanddate {
     opacity: 100%;
     transition: transform 0.25s, opacity 0.25s;
   }
+
+  .window[data-maximized="true"] .window-resize-handle, .window[data-minimized="true"] .window-resize-handle {
+    cursor: default;
+  }
