@@ -1,6 +1,6 @@
 setWindow(document.getElementById("ilymessengerWindowHost"));
 
-function setWindow(window, minWidth = 400, minHeight = 300) {
+function setWindow(window, minWidth = 398, minHeight = 298) {
   dragElement(window);
   resizeElement(window, minWidth, minHeight);
   changeElementAppearence(window);
